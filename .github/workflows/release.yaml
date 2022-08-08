@@ -1,0 +1,14 @@
+on:
+  release:
+    types: [published]
+    
+jobs:
+  log-github-event-goodies:
+    name: "LOG git commit"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show commit id
+      - run: echo "${{github.event.head_commit.id}}"
+      
+      - name: show GITHUB_SHA
+      - run: echo $GITHUB_SHA
