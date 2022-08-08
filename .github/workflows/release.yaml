@@ -1,3 +1,4 @@
+name: Release Loggger
 on:
   release:
     types: [published]
