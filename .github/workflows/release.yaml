@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show commit id
-      - run: echo "${{github.event.head_commit.id}}"
+        run: echo "${{github.event.head_commit.id}}"
       
       - name: show GITHUB_SHA
-      - run: echo $GITHUB_SHA
+        run: echo $GITHUB_SHA
