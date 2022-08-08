@@ -2,11 +2,26 @@ name: Event Loggger
 on: push
 
 jobs:
-  log-github-event-goodies:
+  docker-image:
     name: "LOG git commit"
     runs-on: ubuntu-latest
+    outputs:
+      image_id: ${{ steps.image_id.outputs.image_id }}
     steps:
       - name: Logging
         run: |
           echo "COMMIT_ID=${{github.event.head_commit.id}}"
           echo "the commit id is $COMMIT_ID"
+      
+      - id: image_id
+        run: echo "::set-output name=image_id::eu.gcr.io/lionstep-europe/layer2/container_${{ github.event.head_commit.id }}"
+  
+  
+  get-stuff:
+    name: get things from other job
+    needs: [docker-image]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: show image url
+        run: echo ${{ needs.docker-image.outputs.image_id }}
