@@ -7,4 +7,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Logging
-        run: echo "${{github.event.head_commit.id}}"
+        run: |
+          echo COMMIT_ID="${{github.event.head_commit.id}}"
+          echo "the commit id is $COMMIT_ID"
