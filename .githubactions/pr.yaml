@@ -1,0 +1,11 @@
+name: Push
+
+on: push
+
+jobs:
+    show-commit:
+        name: "show commit id"
+        runs-on: ubuntu-latest
+        steps:
+            - name: "show commit"
+            - run: echo "${{github.event.head_commit.id}}"
