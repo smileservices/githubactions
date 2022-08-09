@@ -10,6 +10,7 @@ jobs:
     name: "LOG git commit"
     runs-on: ubuntu-latest
     steps:
+
       - name: Show event
         run: echo "${{toJson(github.event)}}"
         
