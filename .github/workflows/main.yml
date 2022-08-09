@@ -5,7 +5,19 @@ on:
     - dev
 
 jobs:
+
+  log-github-event-goodies:
+    name: "LOG git commit"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show commit id
+        run: echo "${{github.event.head_commit.id}}"
+      
+      - name: show GITHUB_SHA
+        run: echo $GITHUB_SHA
+        
   pull-request:
+    name: "Make Pull Request"
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -14,5 +26,5 @@ jobs:
       with:
         source_branch: dev
         destination_branch: main
-        pr_title: "Automated::merge DEV into MAIN"
+        pr_title: "Auto merge DEV into MAIN"
         github_token: ${{ secrets.GITHUB_TOKEN }}
