@@ -2,7 +2,7 @@ name: Event Loggger
 on:
   push:
     branches:
-    - dev
+    - main
 
 jobs:
 
