@@ -10,8 +10,8 @@ jobs:
     name: "LOG git commit"
     runs-on: ubuntu-latest
     steps:
-      - name: Show commit id
-        run: echo "${{toJson(event.github.commits)}}"
+      - name: Show event
+        run: echo "${{toJson(github.event)}}"
         
       - name: show GITHUB_SHA
         run: echo $GITHUB_SHA
