@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show commit id
-        run: echo "${{github.event.commits[1].id}}"
+        run: echo "${{toJson(event.github.commits)}}"
         
       - name: show GITHUB_SHA
         run: echo $GITHUB_SHA
