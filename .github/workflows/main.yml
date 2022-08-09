@@ -12,6 +12,6 @@ jobs:
     steps:
       - name: Show commit id
         run: echo "${{github.event.commits[1].id}}"
-      
+        
       - name: show GITHUB_SHA
         run: echo $GITHUB_SHA
