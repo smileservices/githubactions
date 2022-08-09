@@ -14,4 +14,5 @@ jobs:
       with:
         source_branch: dev
         destination_branch: main
+        pr_title: "Automated::merge DEV into MAIN"
         github_token: ${{ secrets.GITHUB_TOKEN }}
