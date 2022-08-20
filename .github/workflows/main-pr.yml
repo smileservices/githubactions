@@ -1,0 +1,17 @@
+name: Event Loggger
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+
+  log-github-event-goodies:
+    name: "LOG git commit"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show commit id
+        run: echo "${{github.event.commits[1].id}}"
+        
+      - name: show GITHUB_SHA
+        run: echo $GITHUB_SHA

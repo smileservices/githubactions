@@ -36,3 +36,9 @@ jobs:
   
       - name: var from calculation
         run: echo ${{ needs.job-var-step.outputs.var}}
+
+      - name: Show commit id
+        run: echo "${{github.event.commits[1].id}}"
+
+      - name: show GITHUB_SHA
+        run: echo $GITHUB_SHA
