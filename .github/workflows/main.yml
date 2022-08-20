@@ -1,35 +1,15 @@
 name: Event Loggger
 on:
-  push:
+  pull_request:
     branches:
-    - main
+      - main
 
 jobs:
-      
-  job-var-step:
-    name: set the job level var from step
-    runs-on: ubuntu-latest
-    outputs: 
-      var: ${{ steps.set_var.outputs.var }}
-  
-    steps:
-      - name: set step var
-        id: set_var
-        run: echo "::set-output name=var::from_step"
-        
-      - name: show same job step var
-        run: echo ${{ steps.set_var.outputs.var }}
-  
-  job-output:
-    name: output vars
-    runs-on: ubuntu-latest
-    needs: [job-var-step ]
-    
-    steps:
-    
-      - name: var from calculation
-        run: echo ${{ needs.job-var-step.outputs.var}}
 
+  log-github-event-goodies:
+    name: "LOG git commit"
+    runs-on: ubuntu-latest
+    steps:
       - name: Show commit id
         run: echo "${{github.event.commits[1].id}}"
 
