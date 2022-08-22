@@ -1,4 +1,4 @@
-name: Release Loggger
+name: Create Release
 on:
   release:
     types: [published]

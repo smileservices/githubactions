@@ -1,4 +1,4 @@
-name: Event Loggger
+name: PR accepted
 on:
   pull_request:
     branches:
