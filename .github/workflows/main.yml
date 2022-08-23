@@ -1,6 +1,6 @@
 name: PR accepted
 on:
-  pull_request:
+  push:
     branches:
       - main
 
