@@ -6,4 +6,6 @@ version 1.2
 minor change
 other minor change
 
-another one
+first commit
+second commit
+turd commit
